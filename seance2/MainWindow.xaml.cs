@@ -20,10 +20,17 @@ namespace seance2
         {
             InitializeComponent();
         }
+
         private void MenuMail_Click(object sender, RoutedEventArgs e)
         {
             MailWindows fenetreMail = new MailWindows();
             fenetreMail.Show();
+        }
+
+        private void ToDoList_Click(object sender, RoutedEventArgs e)
+        {
+            ToDoListWindow fenetreToDo = new ToDoListWindow();
+            fenetreToDo.Show();
         }
     }
 }
