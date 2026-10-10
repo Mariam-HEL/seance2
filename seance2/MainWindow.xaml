@@ -12,6 +12,7 @@
                 <MenuItem Header="Application">
                     <MenuItem Header="Mail" Click="MenuMail_Click"/>
                     <MenuItem Header="To-Do-List" Click="ToDoList_Click"/>
+                    <MenuItem Header="Chronometre" Click="Chrono_Click"/>
                 </MenuItem>
             </Menu>
         </DockPanel>

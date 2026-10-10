@@ -32,5 +32,10 @@ namespace seance2
             ToDoListWindow fenetreToDo = new ToDoListWindow();
             fenetreToDo.Show();
         }
+        private void Chrono_Click(object sender, RoutedEventArgs e)
+        {
+            ChronoWindow fenetreChrono = new ChronoWindow();
+            fenetreChrono.Show();
+        }
     }
 }

@@ -1,0 +1,56 @@
+﻿<Window x:Class="seance2.ChronoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:seance2"
+        mc:Ignorable="d"
+        Title="Chronometre" Height="450" Width="800">
+    <Window.DataContext>
+        <local:ChronoViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Width="220" Height="220">
+            <Ellipse Fill="White" Stroke="Black" StrokeThickness="4"/>
+            <Grid Width="8" Height="140">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Rectangle Grid.Row="0" Fill="Black" RadiusX="3" RadiusY="3"/>
+                <Grid.LayoutTransform>
+                    <RotateTransform Angle="{Binding AngleMinutes}"/>
+                </Grid.LayoutTransform>
+            </Grid>
+            <Grid Width="3" Height="190">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Rectangle Grid.Row="0" Fill="Red"/>
+                <Grid.LayoutTransform>
+                    <RotateTransform Angle="{Binding AngleSecondes}"/>
+                </Grid.LayoutTransform>
+            </Grid>
+            <Ellipse Width="12" Height="12" Fill="Black"/>
+        </Grid>
+        <StackPanel Grid.Row="1" Margin="10">
+            <TextBlock Text="{Binding TexteTemps}"
+                       FontSize="28" FontWeight="Bold"
+                       HorizontalAlignment="Center" Margin="0,0,0,10"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="Demarrer" Width="85" Margin="4"
+                        Command="{Binding DemarrerCommand}"/>
+                <Button Content="Arreter" Width="84" Margin="4"
+                        Command="{Binding ArreteCommand}"/>
+                <Button Content="Reinitialiser" Width="85" Margin="4"
+                        Command="{Binding ReinitialiserCommand}"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
